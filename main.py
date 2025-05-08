@@ -26,6 +26,9 @@ def main():
 
         screen.fill("black")
         updatables.update(dt)
+        for asteroid in asteroids:
+            if not asteroid.collision(player):
+                exit()
         for drawable in drawables:
             drawable.draw(screen)
         pygame.display.flip()
